@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            height: 100vh;
+            width: 100%;
+            border: 1px solid white;
+        }
+
+        #log_in {
+            height: 90%;
+            width: 80%;
+            border: 1px solid white;
+            margin: auto;
+            display: flex;
+            margin-top: 30px;
+            align-items: center;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        }
+
+        #log_in_1 {
+            height: 100%;
+            width: 50%;
+            border: 1px solid white;
+
+        }
+
+        #log_in_2 {
+            height: 100%;
+            width: 50%;
+            border: 1px solid white;
+        }
+
+        #log_in_1 h1 {
+            font-weight: lighter;
+
+        }
+
+        #insider_div {
+            height: auto;
+            width: auto;
+            border: 1px solid white;
+            margin: auto;
+        }
+
+        #form div {
+            margin: 30px;
+        }
+
+        #form input {
+            padding: 13px;
+            width: 90%;
+            border-radius: 5px;
+            border-color: white;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        }
+
+        button {
+            width: 89%;
+            padding: 15px;
+            display: block;
+            margin-left: 20px;
+            background-color: blue;
+            color: white;
+            border-radius: 7px;
+            border-color: white;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        }
+
+        #new12 {
+            margin-left: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+        h3{
+            font-weight: lighter;
+            text-align: center;
+           
+        }
+        #a1{
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="log_in">
+            <div id="log_in_1">
+                <img src="C:\Users\Aniket Ghormare\Desktop\-internal-knife-9218\Tmetric_logo\TMeteic.gif" alt="logo">
+                <h1>Create Your Account</h1>
+                <div id="insider_div">
+                    <form action="" id="form">
+                        <div>
+                            <label for="">Name</label>
+
+                            <input type="text" placeholder="Enter Your Name" id="name">
+                        </div>
+                        <div>
+                            <label for="">Email</label>
+                            <input type="email" placeholder="Enter Your Email" id="email">
+                        </div>
+                        <div>
+                            <label for="">Password</label>
+                            <input type="password" placeholder="Enter Your Passwpord" id="password">
+                        </div>
+
+                        <button id="btn">Sign Up</button>
+                    </form>
+                </div>
+                <h3 id="h3">Already have an account?<a id="a1" href="Log-in.html"> Log in</a></h3>
+            </div>
+            <div id="log_in_2">
+                <img src="https://id.tmetric.com/images/side_image_register.svg" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    document.querySelector("#btn").addEventListener("click",newfun)
+let arr=JSON.parse(localStorage.getItem("signup"))||[]
+    function newfun(){
+        let name=document.querySelector("#name").value
+        let email=document.querySelector("#email").value
+        let password=document.querySelector("#password").value
+
+        let obj={
+            name,
+            email,
+            password
+        }
+        arr.push(obj)
+        localStorage.setItem("signup",JSON.stringify(arr))
+        console.log("hello")
+    }
+
+</script>

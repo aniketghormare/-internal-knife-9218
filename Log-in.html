@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            height: 100vh;
+            width: 100%;
+            border: 1px solid white;
+        }
+        #inside_container{
+            height: 96%;
+            width: 35%;
+            border: 1px solid white;
+            margin: auto;
+            margin-top: 8px;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        }
+        #upper{
+            height:30% ;
+            width: 100%;
+            border: 1px solid #F2F5FC;
+            text-align: center;
+            background-color: #F2F5FC;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        }
+        #lower{
+            height: 70%;
+            width: 100%;
+            border: 1px solid white;
+        }
+        .input1{
+            width: 85%;
+            padding: 15px;
+            border-radius: 7px;
+            border-color: white;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        }
+        #lower div{
+            margin-left: 20px;
+        }
+        #lower button{
+            margin-left: 20px;
+            width: 89%;
+        }
+        #form div{
+            margin-top: 20px;
+        }
+        #form button{
+            margin-top: 20px;
+            padding: 15px;
+            background-color: blue;
+            color: white;
+            border-color: blue;
+            border-radius: 7px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        }
+        #a1{
+           
+           text-align: center;
+           text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="inside_container">
+            <div id="upper">
+                <img src="C:\Users\Aniket Ghormare\Desktop\-internal-knife-9218\Tmetric_logo\TMeteic.gif" alt="logo">
+                <h2>Log into TMetric</h2>
+            </div>
+            <div id="lower">
+                <form action="" id="form">
+                   
+                    <div>
+                        <label for="">Email</label>
+                        <input class="input1" type="email" placeholder="Enter Your Email" id="email">
+                    </div>
+                    <div>
+                        <label for="">Password</label>
+                        <input class="input1" type="password" placeholder="Enter Your Passwpord" id="password">
+                    </div>
+
+                    <button id="btn">Log in</button>
+                    <div>
+                        <h3><a id="a1" href="sign_up.html">Sign Up</a></h3>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
+<script>
+    let lmsdata=JSON.parse(localStorage.getItem("signup"))
+    console.log(lmsdata[0].name)
+    document.querySelector("#btn").addEventListener("click",newfun)
+     function newfun(e){
+        e.preventDefault();
+        let email=document.querySelector("#email").value
+        let password=document.querySelector("#password").value
+        lmsdata.forEach(element => {
+            if(email==element.email && password==element.password){
+                alert ("Login Sucessfull");
+                
+            }else{
+                alert ("fill correct details")
+            }
+           console.log(element.password)
+        });
+
+     }
+</script>
