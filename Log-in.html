@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #container{
+        #container {
             height: 100vh;
             width: 100%;
             border: 1px solid white;
         }
-        #inside_container{
+
+        #inside_container {
             height: 96%;
             width: 35%;
             border: 1px solid white;
@@ -19,37 +21,44 @@
             margin-top: 8px;
             box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
         }
-        #upper{
-            height:30% ;
+
+        #upper {
+            height: 30%;
             width: 100%;
             border: 1px solid #F2F5FC;
             text-align: center;
             background-color: #F2F5FC;
             box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
         }
-        #lower{
+
+        #lower {
             height: 70%;
             width: 100%;
             border: 1px solid white;
         }
-        .input1{
+
+        .input1 {
             width: 85%;
             padding: 15px;
             border-radius: 7px;
             border-color: white;
             box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
         }
-        #lower div{
+
+        #lower div {
             margin-left: 20px;
         }
-        #lower button{
+
+        #lower button {
             margin-left: 20px;
             width: 89%;
         }
-        #form div{
+
+        #form div {
             margin-top: 20px;
         }
-        #form button{
+
+        #form button {
             margin-top: 20px;
             padding: 15px;
             background-color: blue;
@@ -58,14 +67,24 @@
             border-radius: 7px;
             box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
         }
-        #a1{
+
+        .a1 {
+
            
-           text-align: center;
-           text-decoration: none;
+            text-decoration: none;
         }
 
+        #bottom_section {
+            height: 100px;
+            width: 90%;
+          
+            border: 1px solid white;
+            display: flex;
+            justify-content: space-between;
+        }
     </style>
 </head>
+
 <body>
     <div id="container">
         <div id="inside_container">
@@ -75,45 +94,62 @@
             </div>
             <div id="lower">
                 <form action="" id="form">
-                   
+
                     <div>
                         <label for="">Email</label>
                         <input class="input1" type="email" placeholder="Enter Your Email" id="email">
                     </div>
                     <div>
                         <label for="">Password</label>
-                        <input class="input1" type="password" placeholder="Enter Your Passwpord" id="password">
+                        <input class="input1" type="password" placeholder="Enter Your Passwpord" value="" id="password">
                     </div>
 
                     <button id="btn">Log in</button>
-                    <div>
-                        <h3><a id="a1" href="sign_up.html">Sign Up</a></h3>
+                    <div id="bottom_section">
+                        <div>
+                            <h3><a class="a1" href="sign_up.html">Sign Up</a></h3>
+                        </div>
+                        <div>
+                            <h3><a class="a1" href="index.html">Home Page</a></h3>
+                        </div>
                     </div>
-                    
+
+
                 </form>
             </div>
         </div>
 
     </div>
 </body>
+
 </html>
 <script>
-    let lmsdata=JSON.parse(localStorage.getItem("signup"))
+    let lmsdata = JSON.parse(localStorage.getItem("signup"))
     console.log(lmsdata[0].name)
-    document.querySelector("#btn").addEventListener("click",newfun)
-     function newfun(e){
+    document.querySelector("#btn").addEventListener("click", newfun)
+    function newfun(e) {
         e.preventDefault();
-        let email=document.querySelector("#email").value
-        let password=document.querySelector("#password").value
+        let email = document.querySelector("#email").value
+        let password = document.querySelector("#password").value
+        let flex = 0
         lmsdata.forEach(element => {
-            if(email==element.email && password==element.password){
-                alert ("Login Sucessfull");
-                
-            }else{
-                alert ("fill correct details")
-            }
-           console.log(element.password)
-        });
+            if (email == element.email && password == element.password) {
+                flex = 1
 
-     }
+
+
+            }
+            if (email != element.email || password != element.password) {
+                flex = 2
+            }
+
+
+        });
+        if (flex == 1) {
+            alert("Login successful")
+        } else {
+            alert("Please put correct data")
+        }
+
+    }
 </script>
