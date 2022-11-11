@@ -80,12 +80,14 @@
         h1 {
             text-align: center;
         }
-        h3{
+
+        h3 {
             font-weight: lighter;
             text-align: center;
-           
+
         }
-        #a1{
+
+        #a1 {
             text-decoration: none;
         }
     </style>
@@ -127,21 +129,43 @@
 
 </html>
 <script>
-    document.querySelector("#btn").addEventListener("click",newfun)
-let arr=JSON.parse(localStorage.getItem("signup"))||[]
-    function newfun(){
-        let name=document.querySelector("#name").value
-        let email=document.querySelector("#email").value
-        let password=document.querySelector("#password").value
+    document.querySelector("#btn").addEventListener("click", newfun)
+    let arr = JSON.parse(localStorage.getItem("signup")) || []
+    function newfun() {
+      
+        let name = document.querySelector("#name").value
+        let email = document.querySelector("#email").value
+        let password = document.querySelector("#password").value
 
-        let obj={
+        let obj = {
             name,
             email,
             password
         }
-        arr.push(obj)
-        localStorage.setItem("signup",JSON.stringify(arr))
-        console.log("hello")
+       
+        let flex = 0
+        arr.forEach(element => {
+            if (element.name == name && element.email == email) {
+                flex = 1;
+
+            }else{
+                
+                flex=2
+            }
+           
+        });
+        
+        if(flex==1) {
+            alert("You already have an account");
+        }else if(flex==2){
+            arr.push(obj)
+            localStorage.setItem("signup", JSON.stringify(arr))
+            alert ("Sign Up Successful")
+
+        }
+       
+
     }
+    console.log(arr)
 
 </script>
