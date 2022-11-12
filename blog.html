@@ -8,7 +8,7 @@
     <title>Document</title>
     <style>
         #nav {
-            height: 100px;
+            height: auto;
             width: auto;
             border: 1px solid white;
             display: flex;
@@ -30,15 +30,26 @@
         }
 
         #btn {
-            height: 40px;
+            height: 44px;
         }
 
         #nav2 {
             justify-content: space-evenly;
         }
 
+        #nav2>input {
+            border-color: blue;
+            border-radius: 7px;
+        }
+
+        #nav2>button {
+            width: 150px;
+            border-color: blue;
+        }
+
         .a {
             text-decoration: none;
+
         }
 
         #video_page {
@@ -52,7 +63,8 @@
         #video_page_1 {
             height: auto;
             width: auto;
-            border: 1px solid red;
+            border: 1px solid white;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         }
 
         #video_page_2_date {
@@ -62,9 +74,10 @@
         #video_page_2 {
             height: auto;
             width: auto;
-            border: 1px solid red;
+            border: 1px solid white;
             text-align: justify;
             margin-left: 10px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
         }
 
@@ -80,60 +93,372 @@
 
 
         }
+
+        #api_div {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            width: 100vw;
+            gap: 15px;
+        }
+
+        #api_div div>img {
+            width: 100%;
+        }
+
+        .pic2 {
+            width: 30%;
+        }
+
+        #api_div div {
+            height: 500px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+        }
+
+        .name {
+            color: blue;
+            margin-left: 5px;;
+        }
+
+        #footer {
+            height: auto;
+            width: 100%;
+            border: 1px solid #EBEDF0;
+            bottom: 0px;
+            background-color: #EBEDF0;
+
+
+        }
+
+        #footer_1>img {
+            margin-left: 30px;
+        }
+
+        #container {
+            height: 1000px;
+            width: 100%;
+        }
+
+        #footer_2 {
+            height: 300px;
+            width: 100%;
+            border: 1px solid #EBEDF0;
+            display: flex;
+        }
+
+        #footer_2>div {
+            height: 300px;
+            width: 25%;
+            border: 1px solid #EBEDF0;
+        }
+
+        .footer_2_1>div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer_2_1 {
+            text-align: center;
+        }
+
+        footer a {
+            text-decoration: none;
+        }
+
+        #blue_box {
+            height: auto;
+            width: 100%;
+            border: 1px solid #41338f;
+            text-align: center;
+            font-size: 18px;
+            background-color: #41338f;
+            color: white;
+            margin-top: 5px;
+            margin-bottom: 5px;
+
+        }
+
+        #blue_box button {
+            padding: 13px;
+            width: 170px;
+            background-color: white;
+            color: black;
+            border-color: white;
+            border-radius: 5px;
+        }
+
+        #blue_box>* {
+            margin-top: 50px;
+
+        }
+
+        #black_clr {
+            color: black;
+        }
+
+        #blue_box a {
+            text-decoration: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+        .innertext{
+            margin-left: 5px;
+        }
+
+        @media all and (min-width:400px) and (max-width:750px) {
+            #api_div {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            #video_page {
+                flex-direction: column;
+            }
+
+            #nav {
+                flex-direction: column;
+                margin-bottom: 10px;
+            }
+
+            #nav>div {
+                flex-direction: column;
+            }
+            #nav button{
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+        }
+
+        @media all and (min-width:0px) and (max-width:399px) {
+            #api_div {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            #video_page {
+                flex-direction: column;
+            }
+
+            #nav {
+                flex-direction: column;
+                margin-bottom: 10px;
+            }
+
+            #nav>div {
+                flex-direction: column;
+            }
+
+            #footer_2 {
+                flex-direction: column;
+
+            }
+
+            #footer_2 div {
+                width: 100%;
+                text-align: center;
+                height: auto;
+            }
+
+            #footer_1 {
+                height: auto;
+            }
+              #nav button{
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <div id="nav">
-        <div id="nav1">
-            <div>
-                <h3><a class="a" href="">News</a></h3>
+    <div id="container">
+        <div id="nav">
+            <div id="nav1">
+                <div>
+                    <h3><a class="a" href="">News</a></h3>
+                </div>
+                <div>
+                    <h3><a class="a" href="">Productivity</a> </h3>
+                </div>
+                <div>
+                    <h3><a class="a" href="">Use Cases</a></h3>
+                </div>
+                <div>
+                    <h3><a class="a" href="">About</a></h3>
+                </div>
+                <div>
+                    <h3><a class="a" href="">Guest Post</a></h3>
+                </div>
             </div>
-            <div>
-                <h3><a class="a" href="">Productivity</a> </h3>
-            </div>
-            <div>
-                <h3><a class="a" href="">Use Cases</a></h3>
-            </div>
-            <div>
-                <h3><a class="a" href="">About</a></h3>
-            </div>
-            <div>
-                <h3><a class="a" href="">Guest Post</a></h3>
+            <div id="nav2">
+                <input type="text" id="input" placeholder="Search">
+                <button id="btn"><a href="sign_up.html">Subescribe</a> </button>
             </div>
         </div>
-        <div id="nav2">
-            <input type="text" id="input">
-            <button id="btn">Subescribe</button>
-        </div>
-    </div>
-    <div id="nav_bottom_img">
-        <img width="100%" src="https://blog.tmetric.com/content/images/size/w2000/2022/01/MicrosoftTeams-image--1-.png"
-            alt="">
-    </div>
-
-    <div id="video_page">
-        <div id="video_page_1">
+        <div id="nav_bottom_img">
             <img width="100%"
-                src="https://images.unsplash.com/photo-1548328928-34db1c5fcc1f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDZ8fHlvdXR1YmUlMjB8ZW58MHx8fHwxNjYwNjMyNDA1&ixlib=rb-1.2.1&q=80&w=2000"
-                alt="">
+                src="https://blog.tmetric.com/content/images/size/w2000/2022/01/MicrosoftTeams-image--1-.png" alt="">
         </div>
-        <div id="video_page_2">
-            <p>PRODUCTIVITY HACKS</p>
-            <h1>Top YouTube Channels To Follow For Increased Productivity</h1>
-            <p>There are a lot of channels out there that claim to know the secret to productivity. But sifting through
-                all of them can be a productivity nightmare in and of itself. To save you the trouble, we’ve compiled a
-                list of 10 channels that we believe will help you achieve peak productivity.</p>
-            <div id="video_page_2_date">
-                <div>
-                    <img width="70%" src="https://blog.tmetric.com/content/images/size/w100/2021/11/-----1.png" alt="">
-                </div>
-                <div>
-                    <h3>Alla Chernets</h3>
-                    <p>Nov 8,2022 . 7 min read</p>
+
+        <div id="video_page">
+            <div id="video_page_1">
+                <img width="100%"
+                    src="https://images.unsplash.com/photo-1548328928-34db1c5fcc1f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDZ8fHlvdXR1YmUlMjB8ZW58MHx8fHwxNjYwNjMyNDA1&ixlib=rb-1.2.1&q=80&w=2000"
+                    alt="">
+            </div>
+            <div id="video_page_2">
+                <p>PRODUCTIVITY HACKS</p>
+                <h1>Top YouTube Channels To Follow For Increased Productivity</h1>
+                <p>There are a lot of channels out there that claim to know the secret to productivity. But sifting
+                    through
+                    all of them can be a productivity nightmare in and of itself. To save you the trouble, we’ve
+                    compiled a
+                    list of 10 channels that we believe will help you achieve peak productivity.</p>
+                <div id="video_page_2_date">
+                    <div>
+                        <img width="70%" src="https://blog.tmetric.com/content/images/size/w100/2021/11/-----1.png"
+                            alt="">
+                    </div>
+                    <div>
+                        <h3>Alla Chernets</h3>
+                        <p>Nov 8,2022 . 7 min read</p>
+                    </div>
                 </div>
             </div>
         </div>
+        <div id="api_div">
+
+
+        </div>
+        <div id="blue_box">
+            <h1>Make time work for you!</h1>
+            <div>
+                <button><a id="black_clr" href="sign_up.html"> Start Free Trial</a></button>
+            </div>
+            <h3>powered by devart A software vendor with 20 years of experience.</h3>
+        </div>
+        <footer id="footer">
+            <div id="footer_1">
+                <img width="10%" src="C:\Users\Aniket Ghormare\Desktop\-internal-knife-9218\Tmetric_logo\TMeteic.gif"
+                    alt="logo">
+            </div>
+
+            <div id="footer_2">
+                <div class="footer_2_1">
+                    <h3>Applications</h3>
+                    <div>
+                        <div>
+                            <img width="50%" src="https://img.icons8.com/material-outlined/2x/desktop.png" alt="">
+                        </div>
+                        <div>
+                            <p><a class="remove" href="">Desktop</a></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <img width="60%" src="https://img.icons8.com/material-outlined/2x/mac-os.png" alt="">
+                        </div>
+                        <div>
+                            <p><a class="remove" href="">Apple/iOS</a></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <img width="50%" src="https://img.icons8.com/material-outlined/2x/android-os.png" alt="">
+                        </div>
+                        <div>
+                            <p><a class="remove" href="">Android</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer_2_1">
+                    <h3>Browser Extensions</h3>
+                    <div>
+                        <div>
+                            <img width="50%" src="https://img.icons8.com/material-rounded/2x/chrome.png" alt="">
+                        </div>
+                        <div>
+                            <p><a class="remove" href="">Chrome</a></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <img width="50%" src="https://img.icons8.com/material-rounded/2x/chrome.png" alt="">
+                        </div>
+                        <div>
+                            <p><a class="remove" href="">Chrome</a></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <img width="50%" src="https://img.icons8.com/material-rounded/2x/chrome.png" alt="">
+                        </div>
+                        <div>
+                            <p><a class="remove" href="">Chrome</a></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <img width="50%" src="https://img.icons8.com/material-rounded/2x/chrome.png" alt="">
+                        </div>
+                        <div>
+                            <p><a class="remove" href="">Chrome</a></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <img width="50%" src="https://img.icons8.com/material-rounded/2x/chrome.png" alt="">
+                        </div>
+                        <div>
+                            <p><a class="remove" href="">Chrome</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer_2_1">
+                    <h3>Resources</h3>
+                    <div>
+                        <p><a class="remove" href="">Solutions</a></p>
+                    </div>
+                    <div>
+                        <p><a class="remove" href="">Integrations</a></p>
+                    </div>
+                    <div>
+                        <p><a class="remove" href="">Help</a></p>
+                    </div>
+                    <div>
+                        <p><a class="remove" href="">Help</a></p>
+                    </div>
+                    <div>
+                        <p><a class="remove" href="">Help</a></p>
+                    </div>
+                </div>
+                <div class="footer_2_1">
+                    <h3>About</h3>
+                    <div>
+                        <p><a class="remove" href="">About TMetric</a></p>
+                    </div>
+                    <div>
+                        <p><a class="remove" href="">Terma of Services</a></p>
+                    </div>
+                    <div>
+                        <p><a class="remove" href="">Privacy Policy</a></p>
+                    </div>
+                    <div>
+                        <p><a class="remove" href="">Privacy Policy</a></p>
+                    </div>
+                    <div>
+                        <p><a class="remove" href="">Privacy Policy</a></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+
+
+
+
     </div>
 
 
@@ -141,3 +466,41 @@
 </body>
 
 </html>
+<script>
+    let url = "https://636f71bdf2ed5cb047dd5c72.mockapi.io/blog"
+    fetch(url)
+        .then((res) => res.json())
+        .then((data) => {
+            displaydata(data)
+        })
+
+    function displaydata(data) {
+        data.forEach(element => {
+            let div = document.createElement("div")
+            let img = document.createElement("img")
+            img.setAttribute("src", element.img)
+            let name = document.createElement("h4")
+            name.setAttribute("class","innertext")
+            name.innerText = element.name
+            name.setAttribute("class", "name")
+            let head = document.createElement("h2")
+            head.setAttribute("class","innertext")
+            head.innerText = element.heading
+            let img2 = document.createElement("img")
+            img2.setAttribute("src", element.img2)
+            img2.setAttribute("class", "pic2")
+            let name2 = document.createElement("p")
+            name2.setAttribute("class","innertext")
+            name2.innerText = element.heading
+
+            let date = document.createElement("p")
+            date.setAttribute("class","innertext")
+            date.innerText = element.date
+
+            div.append(img, name, head, name2, date)
+            document.querySelector("#api_div").append(div)
+        });
+
+
+    }
+</script>
