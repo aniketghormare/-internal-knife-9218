@@ -4,8 +4,8 @@ body {
 }
 
 #nav {
-    height: 90px;
-    width: 100vw;
+    height: auto;
+    width: 100%;
     border: 1px solid white;
     display: flex;
     justify-content: space-evenly;
@@ -205,6 +205,11 @@ a {
     text-align: center;
 }
 
+
+footer a{
+    text-decoration: none;
+}
+
 .remove {
     text-decoration: none;
 
@@ -258,7 +263,7 @@ a {
 
 #seven_img {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(1, 1fr);
     gap: 20px;
     margin-left: 50px;
@@ -316,7 +321,7 @@ a {
     width: 60%;
     border: 1px solid white;
 }
-@media all and (min-width:550px) and (max-width:900px) {
+@media all and (min-width:400px) and (max-width:700px) {
     #nav{
         flex-direction: column;
     }
@@ -326,9 +331,11 @@ a {
    
     #upper_box {
         flex-direction: column;
+        width: 100vw;
     }
     #seven_img{
-        grid-template-columns: repeat(4,1fr);
+        grid-template-columns: repeat(3,1fr);
+         grid-template-rows: repeat(2, 1fr);
         
     }
     #big_box_2{
@@ -341,11 +348,18 @@ a {
     .bigbox_bottom_box{
         flex-direction: column;
     }
-    
+    #partner_box_2_1{
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(2,1fr);
+    }
+    #mid_nav>ul{
+        flex-direction: column;
+    } 
 }
-@media all and (min-width:5px) and (max-width:549px){
+@media all and (min-width:5px) and (max-width:399px){
     #seven_img{
         grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(3, 1fr);
     }
     #nav{
         flex-direction: column;
@@ -366,6 +380,9 @@ a {
     #footer_2 {
         flex-direction: column;
     }
+    #mid_nav>ul{
+        flex-direction: column;
+    } 
 }
 #big_box_2_2 {
     height: auto;
@@ -490,7 +507,7 @@ a {
 
 #partner_box_1 {
     text-align: center;
-    height: 50%;
+    height: auto;
     margin-top: 20px;
 }
 
@@ -506,6 +523,7 @@ a {
 #partner_box_2_1 {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(1,1fr);
     justify-content: center;
     width: 96%;
     margin: auto;

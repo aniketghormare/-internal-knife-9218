@@ -145,9 +145,11 @@
        
         let flex = 0
         arr.forEach(element => {
-            if (element.name == name && element.email == email) {
+           
+            if(element.name == "" || element.email == "" || element.password==""){
+                flex=3
+            }else if (element.name == name && element.email == email) {
                 flex = 1;
-
             }else{
                 
                 flex=2
@@ -162,6 +164,8 @@
             localStorage.setItem("signup", JSON.stringify(arr))
             alert ("Sign Up Successful")
 
+        }else if(flex==3){
+            alert ("Please fill all the details")
         }
        
 
