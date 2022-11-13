@@ -97,7 +97,8 @@
     <div id="container">
         <div id="log_in">
             <div id="log_in_1">
-                <img width="35%" src="C:\Users\Aniket Ghormare\Desktop\-internal-knife-9218\Tmetric_logo\TMeteic.gif" alt="logo">
+                <img width="35%" src="C:\Users\Aniket Ghormare\Desktop\-internal-knife-9218\Tmetric_logo\TMeteic.gif"
+                    alt="logo">
                 <h1>Create Your Account</h1>
                 <div id="insider_div">
                     <form action="" id="form">
@@ -130,9 +131,9 @@
 </html>
 <script>
     document.querySelector("#btn").addEventListener("click", newfun)
-    let arr = JSON.parse(localStorage.getItem("signup")) || []
+    let arr = JSON.parse(localStorage.getItem("signup")) || [];
     function newfun() {
-      
+
         let name = document.querySelector("#name").value
         let email = document.querySelector("#email").value
         let password = document.querySelector("#password").value
@@ -142,34 +143,36 @@
             email,
             password
         }
-       
-        let flex = 0
+         let flex = 0
         arr.forEach(element => {
-           
-            if(element.name == "" || element.email == "" || element.password==""){
-                flex=3
-            }else if (element.name == name && element.email == email) {
-                flex = 1;
-            }else{
-                
-                flex=2
+
+            if (element.name == "" || element.email == "" || element.password == "") {
+                flex = 3
+            } else if (element.email == email) {
+                flex = 1
             }
-           
+            else {
+
+                flex = 2
+            }
+
         });
-        
-        if(flex==1) {
+
+        if (flex == 1) {
             alert("You already have an account");
-        }else if(flex==2){
+        } else if (flex == 2) {
+           
             arr.push(obj)
             localStorage.setItem("signup", JSON.stringify(arr))
-            alert ("Sign Up Successful")
-
-        }else if(flex==3){
-            alert ("Please fill all the details")
+      
+            alert("Sign Up Successful")
+        } else if (flex == 3) {
+            alert("Please fill all the details")
         }
-       
 
-    }
+    };
+
+
     console.log(arr)
 
 </script>
